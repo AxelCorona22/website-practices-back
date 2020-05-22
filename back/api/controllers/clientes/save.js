@@ -31,6 +31,8 @@ module.exports = {
 
 
   fn: async function ( inputs, exits ) {
+    console.log('inputs', inputs);
+    
     const crear = await Clientes.create( inputs );
     return exits.success( crear );
 
