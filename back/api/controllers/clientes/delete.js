@@ -21,7 +21,7 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
-    const borrarCliente = await Clientes.destroy( inputs );
+    const borrarCliente = await Clientes.destroy( inputs ).fetch();
     // All done.
     return exits.success( borrarCliente );
 
