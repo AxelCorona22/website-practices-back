@@ -33,8 +33,8 @@ module.exports = {
   fn: async function ( inputs, exits ) {
     console.log('inputs', inputs);
 
-    const crear = await Clientes.create( inputs ).fetch();
-    return exits.success( crear );
+    const clienteCreado = await Clientes.create( inputs ).fetch();
+    return exits.success( {cliente:clienteCreado, llave:sails.config.custom.llave} );
 
   },
 

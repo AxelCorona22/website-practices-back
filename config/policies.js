@@ -17,6 +17,7 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+  'clientes/*': ['llave'], //requiere que pasen la policy llave
+  'acceso/*': true //no requiere policy
 
 };

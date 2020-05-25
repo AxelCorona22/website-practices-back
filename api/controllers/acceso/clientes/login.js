@@ -33,7 +33,10 @@ module.exports = {
 
     if(clienteExistente){
       console.log('ingresando');
-      return exits.success(clienteExistente);
+      return exits.success({
+        llave: sails.config.custom.llave,
+        cliente: clienteExistente
+      });
     }else{
       console.log('usuario no encontrado');
       return exits.success({});

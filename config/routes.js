@@ -21,11 +21,11 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
 
-  'POST /api/v1/registro/cliente':                    {action:'clientes/save'},
   'POST /api/v1/clientes/delete':                     { action: 'clientes/delete' },
-
   'GET /api/v1/clientes/get':                         {action:'clientes/get'},
-  'POST /api/v1/clientes/login':                      { action: 'clientes/login' },
+
+  'POST /api/v1/clientes/registro':                    {action:'acceso/clientes/register'},
+  'POST /api/v1/clientes/login':                      { action: 'acceso/clientes/login' },
 
 
 
