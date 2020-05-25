@@ -26,7 +26,7 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
-    
+
     sails.log('intento de login:', inputs);
 
     const clienteExistente = await Clientes.findOne({password: inputs.password, email:inputs.email});
@@ -36,7 +36,7 @@ module.exports = {
       return exits.success(clienteExistente);
     }else{
       console.log('usuario no encontrado');
-      return exits.success();
+      return exits.success({});
     }
     // All done.
 
