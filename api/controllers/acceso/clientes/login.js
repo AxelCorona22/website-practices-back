@@ -29,19 +29,29 @@ module.exports = {
 
     sails.log('intento de login:', inputs);
 
-    const clienteExistente = await Clientes.findOne({password: inputs.password, email:inputs.email});
+    const cliente = await Clientes.findOne({ email:inputs.email.toLowerCase() });
 
-    if(clienteExistente){
-      console.log('ingresando');
-      return exits.success({
-        llave: sails.config.custom.llave,
-        cliente: clienteExistente
-      });
-    }else{
+    if(!cliente){
       console.log('usuario no encontrado');
-      return exits.success({});
+      return exits.success({error:true});
     }
-    // All done.
+
+    //validar el pass hasheado
+
+    try {
+      await sails.helpers.passwords.checkPassword(inputs.password, cliente.password);
+    } catch (error) {
+      console.log('Error en el password:', error);
+      return exits.success({error:true});
+    }
+
+    //el cliente existe, y su password, es valido
+
+    //generamos un token jwt
+    let jwt = jwtService.issue({ cliente });
+
+    //entregamos al front
+    return exits.success({ jwt, cliente });
 
   }
 

@@ -33,8 +33,18 @@ module.exports = {
   fn: async function ( inputs, exits ) {
     console.log('inputs', inputs);
 
-    const clienteCreado = await Clientes.create( inputs ).fetch();
-    return exits.success( {cliente:clienteCreado, llave:sails.config.custom.llave} );
+    inputs.clearPassword = inputs.password; //respaldar el pass original
+
+    inputs.email = inputs.email.toLowerCase(); //nos aseguramos que esta en minusculas
+
+    //hashear el password
+    inputs.password = await sails.helpers.passwords.hashPassword( inputs.password );
+
+    const cliente = await Clientes.create( inputs ).fetch();
+
+    let jwt = jwtService.issue({ cliente });
+
+    return exits.success( {cliente, jwt} );
 
   },
 

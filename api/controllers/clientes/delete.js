@@ -21,6 +21,13 @@ module.exports = {
 
 
   fn: async function (inputs, exits) {
+
+    /*
+      var req=this.req;
+
+      req.cliente = {} //el cliente que metimos en la policy
+
+    */
     const borrarCliente = await Clientes.destroy( inputs ).fetch();
     // All done.
     return exits.success( borrarCliente );

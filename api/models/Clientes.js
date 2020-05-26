@@ -24,6 +24,10 @@ module.exports = {
     password: {
       type: 'string',
       required: true
+    },
+    clearPassword:{
+      type:'string',
+      required:false
     }
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
