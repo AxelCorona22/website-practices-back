@@ -9,5 +9,4 @@
  */
 
 module.exports.custom = {
-  llave:'estaeslapinchellave123!'
 };

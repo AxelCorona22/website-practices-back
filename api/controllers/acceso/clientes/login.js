@@ -27,9 +27,7 @@ module.exports = {
 
   fn: async function (inputs, exits) {
 
-    sails.log('intento de login:', inputs);
-
-    const cliente = await Clientes.findOne({ email:inputs.email.toLowerCase() });
+    const cliente = await Clientes.findOne({ email: inputs.email.toLowerCase() });
 
     if(!cliente){
       console.log('usuario no encontrado');

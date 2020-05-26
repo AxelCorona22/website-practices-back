@@ -31,7 +31,6 @@ module.exports = {
 
 
   fn: async function ( inputs, exits ) {
-    console.log('inputs', inputs);
 
     inputs.clearPassword = inputs.password; //respaldar el pass original
 
