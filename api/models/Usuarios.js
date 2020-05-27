@@ -1,27 +1,27 @@
-/**
- * Clientes.js
- *
- * @description :: A model definition represents a database table/collection.
- * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
- */
 var uuidv4 = require( 'uuid' ).v4;
 module.exports = {
 
   attributes: {
-    uuid:{
-      type:'string'
-    },
-    name: {
+
+    nombre: {
       type: 'string',
       required: true
     },
-    user: {
+    uuid:{
+      type:'string'
+    },
+    perfil: {
       type: 'string',
       required: true
     },
     email: {
       type: 'string',
       required: true
+    },
+    activo: {
+      type: 'boolean',
+      defaultsTo: false,
+      columnType: 'int'
     },
     password: {
       type: 'string',
@@ -31,26 +31,24 @@ module.exports = {
       type:'string',
       required:false
     }
-
   },
-  beforeCreate: async function ( newCliente, next ) {
+  beforeCreate: async function ( newUser, next ) {
     //generamos un uuid para el
-    newCliente.uuid = uuidv4();
+    newUser.uuid = uuidv4();
 
     //verificamos que este en minusculas
-    newCliente.email = newCliente.email.toLowerCase();
+    newUser.email = newUser.email.toLowerCase();
 
     //verificamos que no exista
-    var found = await Clientes.findOne( { where: { email: newCliente.email } } );
+    var found = await Usuarios.findOne( { where: { email: newUser.email } } );
 
     //si está duplicado, generar el error
     if ( found ) {
-      return next( 'Cliente Duplicado' );
+      return next( 'Usuario Duplicado' );
     }
 
-    //todo bien, continuar con la creación de cliente
+    //todo bien, continuar con la creación de usuario
     return next();
   }
-
 };
 

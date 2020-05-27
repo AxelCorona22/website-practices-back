@@ -9,6 +9,7 @@
  * For more information on the Sails logger, check out:
  * https://sailsjs.com/docs/concepts/logging
  */
+require('dotenv').config();
 
 module.exports.log = {
 
@@ -24,6 +25,6 @@ module.exports.log = {
   *                                                                          *
   ***************************************************************************/
 
-  // level: 'info'
+  level: process.env.LOG_LEVEL||'info'
 
 };

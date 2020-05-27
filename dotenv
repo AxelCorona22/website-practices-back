@@ -1,2 +1,15 @@
 JWT_SECRET=estaeslallavedeencripcionparajwt
 JWT_EXPIRATION=8h
+
+LOG_LEVEL=verbose
+
+FIRST_PASSWORD=password
+ACCOUNTS_DOMAIN=dominio.com
+
+#host de la base de datos 
+MYSQL_DB=website
+MYSQL_PORT=3306
+MYSQL_HOST=localhost
+MYSQL_USER=website
+MYSQL_PASSWORD=My$qlP4ssw0rd1!4
+MYSQL_ROOT_PASSWORD=My$qlP4ssw0rd1!5
