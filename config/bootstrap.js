@@ -10,16 +10,16 @@
  */
 
 module.exports.bootstrap = async function() {
-  var date1 = new Date();
+  var startTime = new Date();
 
   await sails.helpers.ensureDatabase();
   await sails.helpers.ensureUsers();
 
-  var date2 = new Date();
+  var endTime = new Date();
 
-  var diff = date2.getTime() - date1.getTime();
+  var timeUsed = endTime.getTime() - startTime.getTime();
 
-  var msec = diff;
+  var msec = timeUsed;
   var hh = Math.floor( msec / 1000 / 60 / 60 );
   msec -= hh * 1000 * 60 * 60;
   var mm = Math.floor( msec / 1000 / 60 );
