@@ -20,7 +20,7 @@
     "uuid": "^8.1.0"
   },
   "devDependencies": {
-    "eslint": "5.16.0"
+    "eslint": "^7.1.0"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
