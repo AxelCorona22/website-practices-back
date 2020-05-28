@@ -27,6 +27,7 @@ module.exports.routes = {
   'POST /api/v1/clientes/registro':                    {action:'acceso/clientes/register'},
   'POST /api/v1/clientes/login':                      { action: 'acceso/clientes/login' },
 
+  'POST /api/v1/acceso/usuarios/login':               { action: 'acceso/usuarios/login' },
 
 
   /***************************************************************************
