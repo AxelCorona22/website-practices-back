@@ -11,8 +11,9 @@ haders debe traer "authorization: Bearer key"
     if(partes[1] && partes[1].length){ //trae llave?
       //es valida?
       let decodificado = jwtService.verify(partes[1]); //verificamos con el mismo service que la generó
-      if(decodificado.cliente && decodificado.cliente.id){
+      if(decodificado.cliente && decodificado.cliente.id || decodificado.usuario && decodificado.usuario.id){
         req.cliente = decodificado.cliente;
+        req.usuario = decodificado.usuario;
         return next();
       }else{
         sails.log('no hay cliente en el token');
