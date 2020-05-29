@@ -28,7 +28,7 @@ module.exports = {
       req.cliente = {} //el cliente que metimos en la policy
 
     */
-    const borrarCliente = await Clientes.destroy( inputs ).fetch();
+    const borrarCliente = await Clientes.destroyOne( { id: inputs.id } );
     // All done.
     return exits.success( borrarCliente );
 
