@@ -33,6 +33,10 @@ module.exports.routes = {
   'POST /api/v1/usuarios/create':                     { action: 'usuarios/create' },
   'GET /api/v1/usuarios/get':                         { action: 'usuarios/get' },
 
+  'POST /api/v1/admin/productos/save':                { action: 'admin/productos/save' },
+  'POST /api/v1/admin/productos/delete':              { action: 'admin/productos/delete' },
+  'GET /api/v1/admin/productos/get':                  { action: 'admin/productos/get' },
+
 
 
 
