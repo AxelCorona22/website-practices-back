@@ -16,7 +16,7 @@ haders debe traer "authorization: Bearer key"
       } catch (error) {
         // el token no es valido por expiración, malformación, etc.
         sails.log('Error en token jwt:', error);
-        return res.sendStatus( 401 ); //regresamos un 401 que será procesado por el interceptor en el front.
+        return res.status( 498 ).send( 'Token Expired/Invalid' );
       }
 
       if(decodificado.cliente && decodificado.cliente.id || decodificado.usuario && decodificado.usuario.id){
