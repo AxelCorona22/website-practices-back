@@ -28,4 +28,5 @@ module.exports.bootstrap = async function() {
   msec -= ss * 1000;
 
   sails.log.verbose( `★ Bootstrap done...`, hh + ':' + mm + ':' + ss );
+  sentryService.captureMessage(sails.config.custom.app.name+' v'+sails.config.custom.app.version+' ha iniciado.');
 };
