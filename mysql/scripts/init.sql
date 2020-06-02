@@ -29,7 +29,7 @@ CREATE TABLE productos
   id            INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   uuid          VARCHAR(36) NOT NULL,
   nombre        VARCHAR(250) NOT NULL,
-  categoria     VARCHAR(250) NOT NULL,
+  categoria     INT NOT NULL,
   precio      	INT(250) NOT NULL,
   descuento     INT(250) NOT NULL,
   updatedAt     DATETIME NULL,

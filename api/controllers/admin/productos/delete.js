@@ -20,8 +20,8 @@ module.exports = {
   },
 
 
-  fn: async function (inputs) {
-    const borrarProducto = await Productos.destroyOne( {id: inputs.id} ).fetch();
+  fn: async function (inputs, exits) {
+    const borrarProducto = await Productos.destroyOne( {id: inputs.id} );
     // All done.
     return exits.success(borrarProducto);
 

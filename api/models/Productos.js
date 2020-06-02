@@ -17,7 +17,7 @@ module.exports = {
       type:'string'
     },
     categoria: {
-      type:'string'
+      type:'number'
     },
     precio: {
       type:'number',

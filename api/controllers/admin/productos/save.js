@@ -16,8 +16,7 @@ module.exports = {
       required: true
     },
     categoria: {
-      type: 'string',
-      required: true
+      type: 'number',
     },
     precio: {
       type: 'number',
