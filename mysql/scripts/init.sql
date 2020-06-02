@@ -35,6 +35,7 @@ CREATE TABLE productos
   updatedAt     DATETIME NULL,
   createdAt     DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE categorias
 (
   id            INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -44,3 +45,4 @@ CREATE TABLE categorias
   createdAt     DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+ALTER TABLE productos ADD FOREIGN KEY (categoria) REFERENCES categorias(id);
