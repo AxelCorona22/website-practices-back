@@ -10,18 +10,18 @@ haders debe traer "authorization: Bearer key"
     let partes = req.headers.authorization.split(' ');
     if(partes[1] && partes[1].length){ //trae llave?
       //es valida?
-      var decodificado;
+      var decodedTokenInfo;
       try {
-        decodificado = jwtService.verify(partes[1]); //verificamos con el mismo service que la generó
+        decodedTokenInfo = jwtService.verify(partes[1]); //verificamos con el mismo service que la generó
       } catch (error) {
         // el token no es valido por expiración, malformación, etc.
         sails.log('Error en token jwt:', error);
         return res.status( 498 ).send( 'Token Expired/Invalid' );
       }
 
-      if(decodificado.cliente && decodificado.cliente.id || decodificado.usuario && decodificado.usuario.id){
-        req.cliente = decodificado.cliente;
-        req.usuario = decodificado.usuario;
+      if(decodedTokenInfo.cliente && decodedTokenInfo.cliente.id || decodedTokenInfo.usuario && decodedTokenInfo.usuario.id){
+        req.cliente = decodedTokenInfo.cliente;
+        req.usuario = decodedTokenInfo.usuario;
         return next();
       }else{
         sails.log('no hay cliente en el token');
