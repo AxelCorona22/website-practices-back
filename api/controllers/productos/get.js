@@ -20,9 +20,7 @@ module.exports = {
   fn: async function (inputs, exits) {
     const productos = await Productos.find();
 
-    return exits.success(productos);
-
-  }
-
+    return exits.success( productos );
+  },
 
 };

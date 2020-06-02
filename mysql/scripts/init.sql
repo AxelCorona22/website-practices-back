@@ -35,4 +35,12 @@ CREATE TABLE productos
   updatedAt     DATETIME NULL,
   createdAt     DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+CREATE TABLE categorias
+(
+  id            INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  uuid          VARCHAR(36) NOT NULL,
+  nombre        VARCHAR(250) NOT NULL,
+  updatedAt     DATETIME NULL,
+  createdAt     DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 

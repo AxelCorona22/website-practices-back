@@ -36,7 +36,11 @@ module.exports.routes = {
   'POST /api/v1/admin/productos/save':                { action: 'admin/productos/save' },
   'POST /api/v1/admin/productos/delete':              { action: 'admin/productos/delete' },
   'GET /api/v1/admin/productos/get':                  { action: 'admin/productos/get' },
+  'GET /api/v1/productos/get':                        { action: 'productos/get' },
 
+  'POST /api/v1/admin/categorias/save':               { action: 'admin/categorias/save' },
+  'POST /api/v1/admin/categorias/delete':             { action: 'admin/categorias/delete' },
+  'GET /api/v1/admin/categorias/get':                 { action: 'admin/categorias/get' },
 
 
 
