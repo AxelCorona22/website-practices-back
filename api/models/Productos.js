@@ -25,7 +25,6 @@ module.exports = {
     },
     descuento: {
       type:'number',
-      required: true
     }
 
 
