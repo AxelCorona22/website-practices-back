@@ -24,7 +24,6 @@ module.exports = {
     },
     descuento: {
       type: 'string',
-      required: true
     }
   },
 

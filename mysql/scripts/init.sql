@@ -31,7 +31,7 @@ CREATE TABLE productos
   nombre        VARCHAR(250) NOT NULL,
   categoria     INT NOT NULL,
   precio      	INT NOT NULL,
-  descuento     INT NOT NULL,
+  descuento     INT NULL,
   updatedAt     DATETIME NULL,
   createdAt     DATETIME DEFAULT CURRENT_TIMESTAMP
 );
