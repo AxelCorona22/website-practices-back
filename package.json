@@ -9,7 +9,7 @@
     "@sailshq/socket.io-redis": "^5.2.0",
     "@sentry/node": "^5.16.0",
     "dotenv": "^8.2.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.15",
     "sails": "^1.2.3",
     "sails-hook-grunt": "^4.0.0",
